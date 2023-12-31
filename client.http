@@ -1,11 +1,37 @@
 ###
-GET  http://localhost:3000/users
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOjEsImV4cCI6MTcwNDA1MjA4M30.umm6MsoxWcbjv8kePHLqcugBnwqTaVBRNvVC7xPo0T0
+
 ###
 POST http://localhost:3000/users HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Teste vvv",
-  "email": "teste@gmail.com",
-  "password": "123456"
+    "name": "Octocat",
+    "email": "octo@github.com",
+    "password": "123456"
+}
+
+###
+GET http://localhost:3000/users/1
+
+###
+DELETE http://localhost:3000/users/1
+
+###
+PUT http://localhost:3000/users/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Octogato",
+    "email": "octocat@github.com"
+}
+
+###
+POST http://localhost:3000/auth/signin HTTP/1.1
+Content-Type: application/json
+
+{
+    "password": "123456",
+    "email": "octo@github.com"
 }
